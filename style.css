@@ -1,0 +1,119 @@
+.calesita {width:300px; height:100px; overflow:hidden; position:relative; }
+.calesita img{ position:absolute; animation:calesita 20s infinite; opacity:0; width: 100%; height: auto;}
+
+@keyframes calesita {25%{opacity:1;} 40%{opacity:0;}}
+.calesita img:nth-child(4){animation-delay:0s;}
+.calesita img:nth-child(3){animation-delay:5s;}
+.calesita img:nth-child(2){animation-delay:10s;}
+.calesita img:nth-child(1){animation-delay:15s;}
+
+body{width: 300px; height: 600px; margin: 0px;}
+
+
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: red;
+    font-size: 13px;
+    text-align: left;
+    padding: 10px;
+    margin: 0px;
+}
+
+.horario{
+  width: 300px;
+  height: 50px;
+}
+
+.box{
+border:0px;
+width:280px;
+height: 20px;
+margin: 5px 10px 7px 10px;
+text-align: left;
+color:#184CA1;
+font-size: 12px;
+border-bottom: 1px solid #D5D8DC;
+}
+
+h1{
+font-size:14px;
+font-family: 'Roboto', sans-serif;
+color: #000000;
+font-weight:normal;
+margin: 5px 10px 5px 10px;
+text-align: left;
+}
+
+
+.caja_form{
+  width: 300px;
+  height: 300px;
+  margin: 0px;
+  padding: 0px;
+  background-color: ;
+  position: absolute;
+}
+
+.legal{
+  font-family: 'Roboto', sans-serif;
+  font-size:10px;
+  text-align: center;
+  width: 290px;
+  padding:5px; 
+  height: 40px;
+  color: #808B96;
+  background-color:#F6F3F3;
+  position: absolute;
+  margin-top: 250px;
+}
+
+
+.wa{
+  width: 300px;
+  height: 100px;
+  background-color: #2eff50;
+  position: absolute;
+  margin-top: 300px;
+}
+
+.button {
+  position: ;
+  margin:15px 10px ;
+  background-color: #2eff50;
+  border: 2px solid #ffffff;
+  color: white;
+  padding: 10px;
+  width: 280px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  webkit-box-shadow:  3px 3px 5px 3px rgb(0,0,0,.1);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 3px rgb(0,0,0,.1);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 3px rgb(0,0,0,.1); 
+}
+
+.button:hover{
+background-color:rgb(0,0,0,.3);
+}
+
+
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+
+.blink{
+  text-decoration: blink;
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-direction: alternate;
+}

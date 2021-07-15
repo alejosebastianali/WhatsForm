@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<script type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<div id="logo" style="width: 300px; height: 50px; background-color:#F6F3F3">
+<img src="img/logo.png" width="300px" height="50px">
+</div>
+
+<div class="calesita">
+    <img src="img/slide4.jpg" alt="Slide 4" />
+    <img src="img/slide3.jpg" alt="Slide 3" />
+    <img src="img/slide2.jpg" alt="Slide 2" />
+	<img src="img/slide1.jpg" alt="Slide 1" />
+</div>
+
+      
+<div id="contactar" class="horario">
+  <p>¡Proporcioná tus datos a continuación para obtener todos nuestros descuentos!</p>
+</div> 
+
+
+		
+		<form name="contact" method="post">
+			
+			<div class="caja_form">
+			<label><h1>¿En que horario te contactamos?</h1></label>
+			<input class="box" type="text" name="horario" placeholder="Indicá la franja horaria" required/>
+
+			<label><h1>Nombre Completo</h1></label>
+			<input class="box" type="text" name="nombre" placeholder="Ingresá tu nombre" required/>
+			
+			<label><h1>Correo Electrónico</h1></label>
+			<input class="box" type="email" name="email" placeholder="Colocá tu e-mail" required></textarea>
+			
+			<label><h1>Teléfono</h1></label>
+			<input class="box" type="text" name="telefono" placeholder="Ingresá tu celular" required></textarea>
+			</div>
+			
+			<div class="legal">Al hacer Click, acepta y envía por whatsapp su información a TOYOTA Arg. que se compromete a usarla conforme a su política de privacidad.</div>
+			
+			<div id="whatsapp" class="wa">
+		    <button class="button">
+		    <img src="img/logo_wa.svg" width="40px" height="40px" style="float: left;" class="blink">
+		    Hace Click! y consultanos<br>por WhatsApp ahora!
+			</button>
+		  	</div>
+
+
+		</form>
+
+
+	<script>
+	var form = document.forms["contact"];
+	form.addEventListener('submit',contact_submit,false);
+
+	function contact_submit(e) {
+		// Stop Form From Submitting
+		e.preventDefault();
+
+		// AQUI SE DEBE COLOCAR EL TELEFONO / WHATSAPP DEL ANUNCIANTE
+		var target = e.target || e.srcElement;
+		var to = 'https://api.whatsapp.com/send?phone=5491155657317';
+		var uri = to;
+		var body = '';
+
+		// Set Form Values to Variables
+		var nombre = target.elements['nombre'].value;
+		var telefono = target.elements['telefono'].value;
+		var email = target.elements['email'].value;
+		var horario = target.elements['horario'].value;
+
+		// Build Body / Message with all Input Fields
+		body += "Horario de Contacto: " + horario + "\r\n";
+		body += "Nombre: " + nombre + "\r\n";
+		body += "Teléfono: " + telefono + "\r\n";
+		body += "E-Mail: " + email + "\r\n";
+
+
+		// Build final Mailto/WhatsApp URI
+		uri += '&text=' + encodeURIComponent(body);
+
+		// Open Mailto in New Window / Tab
+		window.open(uri,'_blank');
+		}
+	</script>
+
+</body>
+</html>
+
+
